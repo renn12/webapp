@@ -1,18 +1,18 @@
 from flask import Flask # /usr/lib/python2.7/dist-packages/flask
 
-app = Flask(__name__)
+app = Flask(__name__) # make instance
 
 @app.route('/')
 def index():
 	return 'This is the Homepage'
 
-@app.route('/test')
-def test():
-        return 'test'
+@app.route('/profile/<username>')
+def profile(username):
+        return 'Hey there %s' % username
 
-@app.route('/tuna')
-def tuna():
-        return '<h2>Tuna is Good</h2>'
+@app.route('/post/<int:post_id>')
+def post(post_id):
+        return '<h2>Post ID is %d</h2>' % post_id
 
 
 
