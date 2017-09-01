@@ -10,6 +10,7 @@ ECHO = 16
 GPIO.setwarnings(False)
 GPIO.setup(TRIG, GPIO.OUT)
 GPIO.setup(ECHO, GPIO.IN)
+GPIO.setup(8, GPIO.OUT)
 
 GPIO.output(TRIG, False)
 time.sleep(2)
@@ -35,9 +36,10 @@ try:
         distance = round(distance, 2)
 
         print "Distance: ", distance, "cm"
-	if distance > 7:
+
+	if distance > 7 and GPIO.input(8) == 0:
 		os.system('curl http://192.168.0.124:8888/LED/ON')
-	else:
+	elif distance <=7 and GPIO.input(8) == 1:
 		os.system('curl http://192.168.0.124:8888/LED/OFF')
 
 except KeyboardInterrupt:
