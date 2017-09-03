@@ -37,12 +37,11 @@ try:
 
         print "Distance: ", distance, "cm"
 
-	if distance > 7 and GPIO.input(8) == 0:
-		os.system('curl http://192.168.0.124:8888/LED/ON')
-	elif distance <=7 and GPIO.input(8) == 1:
-		os.system('curl http://192.168.0.124:8888/LED/OFF')
+        if distance > 7 and GPIO.input(8) == 0:
+            os.system('curl http://192.168.0.124:8888/LED/ON')
+        elif distance <=7 and GPIO.input(8) == 1:
+            os.system('curl http://192.168.0.124:8888/LED/OFF')
 
 except KeyboardInterrupt:
     pass
 GPIO.cleanup()
-
