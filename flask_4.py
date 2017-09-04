@@ -8,10 +8,11 @@ def index():
 
 @app.route('/bacon', methods=['GET', 'POST'])
 def bacon():
-	if request.method == 'POST':
-		return 'You are using POST'
+	if request.method == 'GET':
+		return 'You are using GET'
+	elif request.method == 'POST':
+		return 'You are probably using POST'
 	else:
-		return 'You are probably using GET'
-
+		return 'else'
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0', port=8888)
