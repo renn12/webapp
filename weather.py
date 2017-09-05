@@ -15,4 +15,14 @@ cTemp = weather[0]["temperature"]["tc"]
 
 cWeather = "오늘의 날씨"+ cTime+" 기즌 하늘은 "+cSky+"이고 풍속은 "+cWind+"이고 기온은 "+cTemp+"입니다."
 print(cWeather)
-print(r.json())
+#print(r.json())
+
+
+# json 인코딩
+jsonString = json.dumps(data)
+print(jsonString)
+print(type(jsonString))
+
+# json 디코딩
+dict = json.loads(jsonString)
+print(dict)
