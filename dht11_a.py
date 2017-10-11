@@ -5,7 +5,7 @@ KEY = '76OX405LY0LT7B8Q'
 headers = {"Content-type":"application/x-www-form-urlencoded","Accept":"text/plain"}
 
 sensor = Adafruit_DHT.DHT11
-pin = 14
+pin = 23
 
 
 def dht11_read():
